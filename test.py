@@ -11,10 +11,17 @@ Load(
     Filename=
     '/home/8cz/Workbench/MANTID/SCD363_ConvertPeaksWorkspace/data/corelli_peak.nxs',
     OutputWorkspace='corelli_peak')
+
 ConvertPeaksWorkspace(PeakWorkspace='corelli_peak', OutputWorkspace='lpws')
 
-lpws = mtd["lpws"]
 corelli_peak = mtd["corelli_peak"]
-
+lpws = mtd["lpws"]
 print(corelli_peak.getPeak(0).getGoniometerMatrix())
 print(lpws.getPeak(0).getGoniometerMatrix())
+
+ConvertPeaksWorkspace(PeakWorkspace='corelli_lean',
+                      InstrumentWorkpace="corelli_peak",
+                      OutputWorkspace='pws')
+
+pws = mtd["pws"]
+corelli_lean = mtd["corelli_lean"]
