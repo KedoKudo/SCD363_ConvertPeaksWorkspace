@@ -20,7 +20,7 @@ print(corelli_peak.getPeak(0).getGoniometerMatrix())
 print(lpws.getPeak(0).getGoniometerMatrix())
 
 ConvertPeaksWorkspace(PeakWorkspace='corelli_lean',
-                      InstrumentWorkpace="corelli_peak",
+                      InstrumentWorkspace="corelli_peak",
                       OutputWorkspace='pws')
 
 pws = mtd["pws"]
